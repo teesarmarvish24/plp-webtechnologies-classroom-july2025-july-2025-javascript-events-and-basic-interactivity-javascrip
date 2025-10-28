@@ -1,0 +1,213 @@
+/* --- Global Styles --- */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #28a745;
+    --light-bg: #f8f9fa;
+    --dark-bg: #343a40;
+    --text-light: #f8f9fa;
+    --text-dark: #333;
+    --border-color: #dee2e6;
+    --card-bg: #ffffff;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 20px;
+}
+
+header h1 {
+    color: var(--dark-bg);
+    margin: 0;
+}
+
+header p {
+    font-size: 1.1em;
+    color: #6c757d;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+}
+
+ul {
+    padding-left: 20px;
+}
+ul li {
+    margin-bottom: 10px;
+}
+
+/* --- Part 2: Tab Styling --- */
+.tab-container {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 25px;
+}
+
+.tab-button {
+    padding: 12px 22px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #555;
+    transition: background-color 0.2s, color 0.2s, border-bottom 0.2s;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px; /* Aligns with the main border */
+}
+
+.tab-button:hover {
+    background-color: #f1f1f1;
+}
+
+.tab-button.active {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    font-weight: bold;
+}
+
+.tab-content {
+    display: none; /* Hide all content by default */
+    animation: fadeIn 0.5s;
+}
+
+.tab-content.active {
+    display: block; /* Show only the active content */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Part 1 & 2: Flashcard Styling --- */
+.flashcard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.flashcard-container {
+    background-color: transparent;
+    height: 180px;
+    perspective: 1000px; /* For 3D flip */
+    cursor: pointer;
+}
+
+.flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* This class is toggled by JavaScript */
+.flashcard-container.is-flipped .flashcard-inner {
+    transform: rotateY(180deg);
+}
+
+.flashcard-front, .flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.flashcard-front {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.flashcard-back {
+    background-color: #fdfdfd;
+    color: var(--text-dark);
+    transform: rotateY(180deg);
+}
+
+
+/* --- Part 3: Quiz Styling --- */
+.quiz-question {
+    background-color: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+.quiz-question p {
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+.quiz-question label {
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+.quiz-question label:hover {
+    background-color: #f4f4f4;
+}
+
+#quiz-form button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+#quiz-form button:hover {
+    opacity: 0.85;
+}
+
+#quiz-results {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#quiz-results.success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+#quiz-results.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}

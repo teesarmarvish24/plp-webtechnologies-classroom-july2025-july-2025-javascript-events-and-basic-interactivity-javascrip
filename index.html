@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comprehensive Study Hub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🧠 Comprehensive Study Hub</h1>
+      <p>Your one-stop page for interactive learning.</p>
+    </header>
+
+    <main>
+      <nav class="tab-container">
+        <button class="tab-button active" data-tab="javascript">
+          JavaScript
+        </button>
+        <button class="tab-button" data-tab="html">Quiz</button>
+        <button class="tab-button" data-tab="css">CSS</button>
+        <button class="tab-button" data-tab="methods">Study Methods</button>
+      </nav>
+
+      <section id="javascript" class="tab-content active">
+        <h2>JavaScript Concepts</h2>
+        <p>Click the flashcards below to reveal the answers.</p>
+
+        <div class="flashcard-grid">
+          <div class="flashcard-container">
+            <div class="flashcard-inner">
+              <div class="flashcard-front">What is the DOM?</div>
+              <div class="flashcard-back">
+                The Document Object Model. A tree-like interface that lets
+                JavaScript interact with HTML elements.
+              </div>
+            </div>
+          </div>
+
+          <div class="flashcard-container">
+            <div class="flashcard-inner">
+              <div class="flashcard-front">What is an 'Event Listener'?</div>
+              <div class="flashcard-back">
+                A function that "listens" for a specific event (like a 'click'
+                or 'hover') on an element and then runs a block of code.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="html" class="tab-content">
+        <h2>HTML Quick Quiz</h2>
+        <p>Test your knowledge of HTML basics.</p>
+
+        <form id="quiz-form">
+          <div class="quiz-question">
+            <p>1. What does 'HTML' stand for?</p>
+            <label
+              ><input type="radio" name="q1" value="a" /> HyperText Markup
+              Language</label
+            >
+            <label
+              ><input type="radio" name="q1" value="b" /> High-Level Text
+              Machine</label
+            >
+            <label
+              ><input type="radio" name="q1" value="c" /> Hyperlink Transfer
+              Model</label
+            >
+          </div>
+          <div class="quiz-question">
+            <p>2. Which tag is used for the largest heading?</p>
+            <label><input type="radio" name="q2" value="a" /> &lt;h6&gt;</label>
+            <label
+              ><input type="radio" name="q2" value="b" /> &lt;heading&gt;</label
+            >
+            <label><input type="radio" name="q2" value="c" /> &lt;h1&gt;</label>
+          </div>
+
+          <button type="submit">Check Answers</button>
+          <p id="quiz-results"></p>
+        </form>
+      </section>
+
+      <section id="css" class="tab-content">
+        <h2>CSS Concepts</h2>
+        <p>
+          CSS (Cascading Style Sheets) is what makes the web look good. It
+          handles colors, fonts, layout, and animations.
+        </p>
+        <p>
+          For example, the <strong>flexbox</strong> and
+          <strong>grid</strong> properties are powerful tools for aligning
+          content on a page. This tab layout itself is controlled by CSS!
+        </p>
+      </section>
+
+      <section id="methods" class="tab-content">
+        <h2>Effective Study Methods</h2>
+        <ul>
+          <li>
+            <strong>Active Recall:</strong> Actively trying to retrieve
+            information from memory, just like you did with the flashcards.
+          </li>
+          <li>
+            <strong>Spaced Repetition:</strong> Reviewing information at
+            increasing intervals over time to improve long-term retention.
+          </li>
+          <li>
+            <strong>The Pomodoro Technique:</strong> Work in focused 25-minute
+            intervals (called "Pomodoros") separated by short 5-minute breaks.
+          </li>
+          <li>
+            <strong>Feynman Technique:</strong> Try to explain a complex concept
+            in simple terms, as if you were teaching it to someone else.
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
